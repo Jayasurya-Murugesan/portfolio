@@ -5,10 +5,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C#</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
+    <h2>Learning c#</h2>
+    <h3>Datatypes</h3>
+    <p>int, long, string, char, bool, var</p>
+    <hr>
+    <section title="enum">
+        <strong>Enum</strong>
+        <p>value type defined based on named constants. we can assign int to values. To get the number (int)enum.value
+        </p>
+    </section>
+    <hr>
+    <section title="Tuple">
+        <strong>Tuple</strong>
+        <p>when we need to return multiple values. <br>var values=("a",1,true). <br>To get secon value values.Item2
+            <br>var valuWithName(First: "t") <br> valuWithName.First
+        </p>
+    </section>
+    <hr>
+    <section title="Records">
+        <strong>Records</strong>
+        <p>shallow immutable classes, equallity check <br>
+            value type - check type and check content <br>
+            refrential - by memry (hex code) <br>
+            should not be used with EFCore <br>
+            public record Name
+            {
+            public int Prop{get; set;}
+            }
+            or public record Name{int Prop1, string Prop2}
+        </p>
+    </section>
+    <hr>
+
+    <section title="">
+        <strong></strong>
+        <p>
+        </p>
+    </section>
+    <hr>
+    <section>
+        <Strong>Things to note</Strong>
+        <p>value types are stored in stacks and cannot be null</p>
+    </section>
 
 </body>
+
 
 </html>
