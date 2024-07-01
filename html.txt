@@ -1,0 +1,12 @@
+Hyper text markup language
+
+content is wrapped in tags <p>
+
+closing tags has /
+
+Attribute provies extrainfo about an element
+Attribute="values"
+
+ELements = <p>content</p>
+
+not allowed in URLs are TAB SPACE " < > [] {} \ | ~ ` cap

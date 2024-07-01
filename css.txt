@@ -1,0 +1,10 @@
+Cascading Style Sheet
+
+for presentation 
+
+Graceful degradation = user accessing from old devices able to view html without CSS
+
+Selectors {
+Properties : Values;
+Properties : Values;
+}
