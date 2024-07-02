@@ -1,4 +1,7 @@
+
+====================
 ASP.NET Core Web API
+====================
 
 from https://www.youtube.com/watch?v=AhAxLiGC7Pc
 
@@ -153,10 +156,7 @@ public static class newCladd{
 
 	map.Get("games", ()=>games);
 	return app;
-}
- 
-
-
+	}
 }
 
 now in program.cs file 
