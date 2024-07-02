@@ -1,0 +1,236 @@
+ASP.NET Core Web API
+
+from https://www.youtube.com/watch?v=AhAxLiGC7Pc
+
+ctrl+ ` to open terminal
+ctrl+shift+P to open command pallet
+Ctrl+shift+E - open explorer
+ctrl+. context menu
+------------
+Commands
+-------------
+dotnet --version 
+dotnet --info
+dotnet new list
+dotnet build or ctrl+shift+B - code to binaries 
+dotnet new webapi -o  name to create project 
+f5 - debug 
+ctrl+F5 or dotnet run to run without debugging
+
+----------------
+Folder structure
+-----------------
+.sln to group the projects
+
+Program.cs file - 
+
+declare bulder and app
+has app.Run()
+
+.csprj
+has waht is this project and target freamework, enable nullable
+
+
+appsettings.json
+has connection string
+
+appsettings.Development.json
+
+in Properties = launchsettings.json
+
+has profiles - http, https
+has environmental variables - "ASPNETCORE_ENVIRONMENT" : "Development"
+
+bin - final dlls
+obj - temp files
+Dependencies - packages
+
+------------
+Rest API
+------------
+Application Programming Interface
+
+an API helps client communicate what they want to the service
+so that it can understand and fulfill the request
+
+Representational State Transfer
+
+Stateless, client-server, Uniform interface, cacheable, layered system, code on demand
+
+Rest or Restful API is a API that confirms to the rest architecutral style
+
+resource is any object that api can recieve from or send to clientsc
+
+
+protocal+domain+Resource = Uniform Resource Identifier - URI
+
+------------
+HTTP Methods
+------------
+
+interact with api using HTTP Methods
+
+POST - create
+GET - Retrieve
+PUT - Update
+DELETE - delete
+
+10* nformational
+200 success
+201 created
+204 no content
+404 not found
+400 bad request
+500 Internal server error
+
+JSON - Javascript Object Notation
+[
+	{
+	   "id":1,"name":"example"
+	},{}
+]
+
+
+---------------------
+REST Cient debugging
+---------------------
+add the package
+create name.http file
+add GET URI
+F5
+ctrl+shift+R to send request
+
+GET URI
+###
+GET URI_1
+--------------------
+Data Transfer Object
+--------------------
+A Data Transfer Object is an object that is used to encapsulate data, and send it from one subsystem of an application to another.
+
+DTOs are most commonly used by the Services layer in an N-Tier application to transfer data between itself and the UI layer. 
+
+-------
+Records
+-------
+immutable. once they are created, we cannot modify. so it is suitable for DTOs
+
+pubic record class Game (int id, string name, DateOnly date);
+
+------
+CRUD
+------
+
+in program.cs
+List<Game> games= [new (1,"FIFA","2024-01-01"),
+new (1,"FIFA2","2023-01-01")];
+
+app.MapGet("games", ()=>games); 
+
+app.MapGet("games/{id}", (int id)=> games.Find(game=>
+					game.id==id))
+.witName("GetGame");
+
+app.mapPost("games",(NewDTO newGame)=>
+{
+NewDTO game= new(games.count+1, newGame.Name);
+games.Add(game);
+return Results.CreatedAtRoute( "GetGames", new (id=game.ID), game);
+}
+);
+
+app.mapPut(games.FindIndex);
+app.mapDelete(games.RemoveAll);
+
+---------
+extension class
+----------------
+a class has to be static
+use this keword
+
+public static class newCladd{
+	public static WebApplication MapGames(this WebApplicaion app){
+
+	map.Get("games", ()=>games);
+	return app;
+}
+ 
+
+
+}
+
+now in program.cs file 
+
+app.newClass();
+app.Run();
+
+------------
+GroupBUilder
+------------
+
+var group=app.MapGroup("games");
+
+return RoutGroupBuilder
+return group;
+
+URI -> instead of games now it is /
+app.MapGet("/", ()=>games); 
+
+
+---------------------
+Entity Framework Core
+---------------------
+
+Object-Relational Mapping 
+
+technique for converting data between a relational db and OOP
+
+EFCore, a open source & cross platform ORM for.NET
+
+use LINQ
+change tracking
+Multiple db providers
+
+---------------
+Data Models
+---------------
+create Entities, classfile
+
+
+add EFcore and SQLLite package
+
+add DBContext file derive DBcontext(options)
+
+an object represents a session with database for querying
+
+create DBset<> property
+
+in program.cs
+var connString= builder.Configuration
+		.GetConnectionString("ConstringName")
+builder.services.AddSqlLite<DBContext>.(conString);
+
+in appsettings.json
+"ConnectionStrings":{
+	"ConstringName":"Data Source=Gamestore.db"
+}
+
+credentials in user secrets
+
+IConfiguration -Cloud sources, command Line args, Environment variables
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
