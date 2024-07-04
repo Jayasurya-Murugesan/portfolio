@@ -1,0 +1,25 @@
+-------------------
+Dependecy Injection
+-------------------
+
+
+service wont be afffected by changes to its dependencies
+
+
+
+-------------------
+Dependecy inversion
+-------------------
+Code should be depend on absraction as opposed to concrete implementation
+
+Benifits
+easy to test
+
+dependency can be swapped out for different implementation without modifying the service
+
+code is cleaner, easier to modify
+
+-------------------
+Service lifetimes
+-------------------
+

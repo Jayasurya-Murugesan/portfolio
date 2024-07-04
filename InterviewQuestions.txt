@@ -1,0 +1,35 @@
+			'''''''''''''''''''''''''''''''''
+			'				'
+			'	Interview Question	'
+			'				'
+			'''''''''''''''''''''''''''''''''
+
+Total Experience - 3 years 9 months
+
+MVC, EF - 3 years
+webAPI - 2 year
+SQL - 3.5 years
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+practical use of interface
+Static variables
+
+SQL - difference between Function vs SPs, indexes, Normalization, advantages of stored procedures, what is SQL Injection
+
+MVC - Scaffolding, Authentication, Authorization - AD group, session management - , Async/Await
+
+Web API - restful, web frameworks, service lifetime
+
+Entity Framework Core - Codefirst Approach 
+
+Server - Windows server
+
+Framework - Agile /  Scrub / Kanban, repository pattern, Solid principles, design pattern
+
+Dependency Injection - what it it, how to add
+
+C# - Private constructor, why we use it
+
+Static constructor
+
+.net core - appsettings.json, launchSettings.Json, Pipelines 

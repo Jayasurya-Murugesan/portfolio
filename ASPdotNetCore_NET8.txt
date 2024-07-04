@@ -220,11 +220,15 @@ credentials in user secrets
 IConfiguration -Cloud sources, command Line args, Environment variables
 
 
+-----------
+Migration
+-----------
 
+install nuget dotnet EF and EF Design
 
+dotnet ef migrations add nameOfMigration Data\Migrations 
 
-
-
+dotnet ef database update
 
 
 
