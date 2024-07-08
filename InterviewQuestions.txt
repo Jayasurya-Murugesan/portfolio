@@ -14,7 +14,7 @@ SQL - 3.5 years
 practical use of interface
 Static variables
 
-SQL - difference between Function vs SPs, indexes, Normalization, advantages of stored procedures, what is SQL Injection
+SQL - difference between Function vs SPs, indexes, Normalization, advantages of stored procedures, what is SQL Injection and prevent, JOINS
 
 MVC - Scaffolding, Authentication, Authorization - AD group, session management - , Async/Await
 
@@ -33,3 +33,7 @@ C# - Private constructor, why we use it
 Static constructor
 
 .net core - appsettings.json, launchSettings.Json, Pipelines 
+
+previous experience, SQL optimize, code optimize, difficult bug, what to do if there is production bug just after release, migration from old to new 
+
+--check for chat question
