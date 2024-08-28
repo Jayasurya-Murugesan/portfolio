@@ -1,0 +1,65 @@
+Normalization
+-------------
+to avoid data redundancy
+to effectively design db
+
+Level of Normalization
+----------------------
+each level have certain rules
+1NF, 2NF, 3NF, BCNF, 4NF, 5NF, 6NF
+mostly happens until 3NF
+
+
+De-Normalized data
+------------------
+all data in single file/table
+
+in de-normalizaed database, it may cause
+* have insertion anomalies
+* have deletion anomalies
+* have updation anomalies 
+
+1NF
+---
+1.Every column should have single values (no x,y)
+2. Each row should be unique. Either through a single or multiple columns. Not mandatory to have primary key.
+
+2NF
+----
+1. Must be in 1NF
+2. All non key attributes must be fully dependent on candidate key.
+if a non-key column is partailly dependent on cadidate ky (subset of columns forming candtidate key) then split them into separate tables.
+3.Every table should have primary key and relationship between te tables should be formed using foreign key
+
+
+Candidate Key
+-------------
+* set of columns which uniquely identify a record.
+* A table can have multiple candidate keys because there can be multiple set of columns which uniquely identify a record/row in a table.
+
+Non-key columns
+---------------
+columns which are not part of the candidate key or primary key.
+
+Partial Dependency
+------------------
+* if your candidate key is a combination of 2 columns (or multiple columns) then every non key column (columns which are not part of the candidate key) should be fully dependent on all the columns.
+
+* if there is any non key column whihch depends only on one of the candidate key columns then this results in partial dependency.
+
+
+3NF
+---
+1. Must be in 2NF
+2. Avoid Transitive dependencies
+
+Transitive dependency
+---------------------
+A table has 3 columns namely A, B and C
+If A is functionally dependeny on B adn B is functionally dependeny on C then we can say A is functionally dependeny on C.
+
+
+
+==================================================
+From - https://www.youtube.com/watch?v=rBPQ5fg_kiY
+==================================================

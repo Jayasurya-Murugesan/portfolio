@@ -1,0 +1,129 @@
+SQL Performance
+---------------
+Faster response time
+higher scalability
+Reduced cost
+
+
+1. restore database through bak file
+
+Clustered Index structure
+-------------------------
+tree strucutre
+index row at top
+data rows at the bottom
+data is stored in the sorted order by the cluster key
+PK is cluster key
+CK is one per table 
+
+root node
+leaf node - actual data
+each leaf node is called page 8kb
+each page has 50-100 rows
+
+when we search using ID, it uses above to traverse table to find data.
+incase of non id values in where condition, server will go through all pages to get the data
+
+Index
+-----
+create index on Name
+table can have multiple index
+use index when statement needs ot access data by criteria other than primary key
+
+1.
+		keys
+ Keys	keys	Keys			(all nodes are interconnected, index keys sorted by Name)
+RP RP  RP  RP	RP RP
+
+2.
+			keys
+	Keys	  keys			Keys
+Data Data  Data  Data	Data   Data
+
+2 operation when we are not using CK,
+	1.locate the index in tree
+	2.use the index to traverse through the tree to find data
+
+Row pointer points to where the corresponding data is in the table
+
+
+
+Analysing SQL Statements
+-------------------------
+	* Get Execution plan
+	* Rewrite SQL statements
+
+
+1.Execution plan
+--------------
+use Ctrl+L
+view right to left and top to bottom
+check for index and compare which is best steps to use
+shows steps how the query is executed, find expensive operations and tuning so query can be exectured efficiently
+
+look for cost on each node and select
+
+use below and look for logical read count in message tab. each represent a page
+	SET STATISTICS IO ON
+	SET STATISTICS TIME  ON
+
+SQL Server Data Access Operations
+----------------------------------
+SCAN - Read all the rows - on high volume table, low performance
+SEEK - traverse through tree structure 
+
+Cluster Index scan - scan through all the row on clustered index
+
+Parallelism - devide tasks into sub task, run it parrallely and combine its result to one
+
+in nonclustered index search-
+	index seek - search for that index
+	key lookup - gets the actual values
+
+SQL Server join operation
+--------------------------
+	Nested loop join - for each val in 1st data set, server lookup match in 2nd data
+	Merger join - if both tables are sorted, effective
+	hash join - when large data set is involved. it is expesive. try adding index
+
+Improve performance by 
+----------------------
+	* adding index
+	* rewriting SQL statements (using subqueries instead of joins and vice versa, using Exists/NOT EXISTS in where clause)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===========================================
+https://www.youtube.com/watch?v=HvxmF0FUwrM
+===========================================
